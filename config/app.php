@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Laravel',
+    'name' => 'Resume with CMS by oknasir',
 
     /*
     |--------------------------------------------------------------------------
@@ -168,8 +168,7 @@ return [
          */
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-
-        //
+        Laravel\Passport\PassportServiceProvider::class,
 
         /*
          * Application Service Providers...

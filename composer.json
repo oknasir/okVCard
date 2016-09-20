@@ -6,7 +6,8 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*"
+        "laravel/framework": "5.3.*",
+        "laravel/passport": "^1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -15,7 +16,8 @@
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
         "barryvdh/laravel-ide-helper": "^2.2",
-        "barryvdh/laravel-debugbar": "^2.2"
+        "barryvdh/laravel-debugbar": "^2.2",
+        "doctrine/dbal": "^2.5"
     },
     "autoload": {
         "classmap": [
@@ -44,6 +46,11 @@
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
+        ],
+        "ide-helper": [
+            "php artisan ide-helper:generate",
+            "php artisan ide-helper:models --no-interaction",
+            "php artisan ide-helper:meta"
         ]
     },
     "config": {

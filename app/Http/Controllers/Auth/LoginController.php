@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -29,11 +30,41 @@ class LoginController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+    }
+
+    /**
+     * Handle a login request to the application with email or username.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function login(Request $request)
+    {
+        $this->validateLogin($request);
+
+        if ($this->hasTooManyLoginAttempts($request)) {
+            $this->fireLockoutEvent($request);
+
+            return $this->sendLockoutResponse($request);
+        }
+
+        $credentials = $this->credentials($request);
+
+        if ($this->guard()->attempt($credentials, $request->has('remember')))
+            return $this->sendLoginResponse($request);
+        else {
+            $credentials['username'] = $credentials['email'];
+            unset($credentials['email']);
+            if ($this->guard()->attempt($credentials, $request->has('remember')))
+                return $this->sendLoginResponse($request);
+        }
+
+        $this->incrementLoginAttempts($request);
+
+        return $this->sendFailedLoginResponse($request);
     }
 }

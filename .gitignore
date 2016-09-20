@@ -11,3 +11,7 @@ Homestead.yaml
 _ide_helper*
 .phpstorm.meta.php
 composer.lock
+config/debugbar.php
+config/ide-helper.php
+storage/oauth-private.key
+storage/oauth-public.key
