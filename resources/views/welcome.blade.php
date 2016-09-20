@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+@extends('layouts.app')
 
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
 
-        <title>Laravel</title>
+    <example></example>
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
+@endsection
 
-    </head>
-    <body>
-
-        <section class="container">
-
-            <h1>Laravel</h1>
-
-            <example></example>
-
-        </section>
-
-        <script src="{{ elixir('js/app.js') }}"></script>
-
-    </body>
-</html>
