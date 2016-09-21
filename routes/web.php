@@ -11,10 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => '/'], function ($ng) {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::get('{ng}', function ($ng) {
+        info($ng);
+        return view('welcome');
+    });
+});

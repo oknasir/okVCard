@@ -11,7 +11,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ elixir('css/app.css') }}">
 
     <!-- Scripts -->
@@ -79,6 +78,12 @@
     </nav>
 
     @yield('content')
+
+    @if (Config::get('app.debug'))
+        <script type="text/javascript">
+            document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+        </script>
+    @endif
 
     <!-- Scripts -->
     <script src="{{ elixir('js/app.js') }}"></script>

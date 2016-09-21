@@ -1,6 +1,11 @@
+process.env.DISABLE_NOTIFIER = true;
+
 const elixir = require('laravel-elixir');
 
+require('./elixir-delete');
 require('laravel-elixir-vue');
+require('laravel-elixir-livereload');
+require('laravel-elixir-webpack-official');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,8 +18,55 @@ require('laravel-elixir-vue');
  |
  */
 
-elixir(mix => {
-    mix.sass('app.scss')
-       .webpack('app.js')
-       .version(['public/css/**/*.css', 'public/js/**/*.js']);
+
+elixir(function(mix) {
+
+    /**
+     * sass
+     */
+    mix.sass('front.scss');
+
+    /**
+     * Vue, JQuery and Bootstrap scripts webpack bundling and copying
+     */
+    mix.webpack('front.js');
+
+    /**
+     * Angular scripts webpack bundling and copying
+     */
+    mix.webpack([]
+        , 'public/resume'
+        , 'resources/assets/typescript'
+        , require('./ngconfig.js')
+    ).scripts([
+        '../../../public/resume/vendor.js',
+        '../../../public/resume/resume.js'
+    ], 'public/js/resume.js');
+
+    /**
+     * Version all assets
+     */
+    mix.version([
+        'css/*.css',
+        'js/*.js'
+    ]);
+
+    /**
+     * Remove distributed pack files
+     */
+    mix.delete(['public/resume', 'public/css', 'public/js']);
+
+    /**
+     * copy fonts
+     */
+    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/build/fonts/bootstrap');
+
+    /**
+     * Live Reload
+     */
+    mix.livereload([
+        'public/build/css/*.css',
+        'public/build/js/*.js'
+    ]);
+
 });

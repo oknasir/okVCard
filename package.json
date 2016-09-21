@@ -1,19 +1,43 @@
 {
   "private": true,
-  "scripts": {
-    "prod": "gulp --production",
-    "dev": "gulp watch"
-  },
   "devDependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "@types/es6-shim": "0.0.31",
+    "@types/node": "^6.0.38",
+    "awesome-typescript-loader": "^2.2.4",
+    "del": "^2.2.2",
     "gulp": "^3.9.1",
-    "jquery": "^3.1.0",
-    "laravel-elixir": "^6.0.0-9",
-    "laravel-elixir-vue": "^0.1.4",
-    "laravel-elixir-webpack-official": "^1.0.2",
-    "lodash": "^4.14.0",
-    "vue": "^1.0.26",
-    "vue-resource": "^0.9.3",
-    "webpack": "2.1.0-beta.22"
+    "laravel-elixir": "^6.0.0-11",
+    "laravel-elixir-livereload": "^1.1.6",
+    "laravel-elixir-vue": "^0.1.8",
+    "laravel-elixir-webpack-official": "^1.0.4",
+    "raw-loader": "^0.5.1",
+    "typescript": "^2.0.0",
+    "typescript-decorate": "^1.0.0",
+    "typescript-extends": "^1.0.1",
+    "typescript-metadata": "^1.0.0",
+    "typescript-param": "^1.0.0"
+  },
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.6",
+    "@angular/compiler": "2.0.0-rc.6",
+    "@angular/core": "2.0.0-rc.6",
+    "@angular/forms": "2.0.0-rc.6",
+    "@angular/http": "2.0.0-rc.6",
+    "@angular/platform-browser": "2.0.0-rc.6",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.6",
+    "@angular/router": "3.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.6",
+    "bootstrap-sass": "^3.3.7",
+    "es6-shim": "^0.35.1",
+    "es7-reflect-metadata": "1.6.0",
+    "jquery": "^3.1.1",
+    "lodash": "^4.16.2",
+    "reflect-metadata": "^0.1.3",
+    "rxjs": "5.0.0-beta.11",
+    "source-map-loader": "0.1.5",
+    "underscore": "^1.8.3",
+    "vue": "^1.0.28",
+    "vue-resource": "^1.0.3",
+    "zone.js": "^0.6.17"
   }
 }
