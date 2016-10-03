@@ -97,4 +97,8 @@ export class FirstComponent {
 
         this.filesUpload(0);
     }
+
+    public onNotify(close:boolean):void {
+        console.log('close:',close);
+    }
 }

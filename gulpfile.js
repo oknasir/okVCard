@@ -39,6 +39,8 @@ elixir(function(mix) {
         , 'resources/assets/typescript'
         , require('./ngconfig.js')
     ).scripts([
+        '../vendor/ease.min.js',
+        '../../../node_modules/segment-js/dist/segment.js',
         '../../../public/resume/vendor.js',
         '../../../public/resume/resume.js'
     ], 'public/js/resume.js');

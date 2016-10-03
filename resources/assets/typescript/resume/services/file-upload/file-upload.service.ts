@@ -14,6 +14,7 @@ export class FileUploadService {
 
     /**
      * @param requestUrl
+     * @param file
      * @returns {Observable<{}>}
      */
     public upload (requestUrl: string, file): Observable<{}> {
@@ -26,7 +27,7 @@ export class FileUploadService {
 
     /**
      * @param res
-     * @returns {any}
+     * @returns any
      */
     private static extractData (res: Response): any {
         let body = res.json();
