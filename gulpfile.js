@@ -2,7 +2,7 @@ process.env.DISABLE_NOTIFIER = true;
 
 const elixir = require('laravel-elixir');
 
-require('./elixir-delete');
+require('./gulp/elixir-delete');
 require('laravel-elixir-vue');
 require('laravel-elixir-livereload');
 require('laravel-elixir-webpack-official');
@@ -32,13 +32,18 @@ elixir(function(mix) {
     mix.webpack('front.js');
 
     /**
-     * Angular scripts webpack bundling and copying
+     * Angular scripts webpack
      */
     mix.webpack([]
         , 'public/resume'
         , 'resources/assets/typescript'
-        , require('./ngconfig.js')
-    ).scripts([
+        , require('./gulp/ngconfig.js')
+    );
+
+    /**
+     * Angular scripts bundling and copying
+     */
+    mix.scripts([
         '../vendor/ease.min.js',
         '../../../node_modules/segment-js/dist/segment.js',
         '../../../public/resume/vendor.js',

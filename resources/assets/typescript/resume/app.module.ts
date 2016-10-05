@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { routes } from './app.routing';
 
@@ -20,6 +21,7 @@ import { FileUploadService } from "./services/file-upload/file-upload.service";
         BrowserModule,
         FormsModule,
         HttpModule,
+        NgbModule,
         RouterModule.forRoot(routes)
     ],
     declarations: [
