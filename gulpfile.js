@@ -40,15 +40,23 @@ elixir(function(mix) {
         , require('./gulp/ngconfig.js')
     );
 
+    // Semantic JS
+    mix.scriptsIn('resources/assets/vendor/semantic/definitions/', 'public/js/semantic.js');
+
     /**
      * Angular scripts bundling and copying
      */
     mix.scripts([
         '../vendor/ease.min.js',
         '../../../node_modules/segment-js/dist/segment.js',
+        '../../../node_modules/jquery/dist/jquery.js',
+        '../../../public/js/semantic.js',
         '../../../public/resume/vendor.js',
         '../../../public/resume/resume.js'
     ], 'public/js/resume.js');
+
+    // Semantic LESS
+    mix.less('resume.less');
 
     /**
      * Version all assets
@@ -63,10 +71,8 @@ elixir(function(mix) {
      */
     mix.delete(['public/resume', 'public/css', 'public/js']);
 
-    /**
-     * copy fonts
-     */
-    mix.copy('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/build/fonts/bootstrap');
+    // Semantic Themes
+    mix.copy('resources/assets/vendor/semantic/themes/**/assets/**/*.*', 'public/build/fonts/semantic');
 
     /**
      * Live Reload

@@ -12,11 +12,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ elixir('css/front.css') }}">
+    <link rel="stylesheet" href="{{ elixir('css/resume.css') }}">
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.okVCard = <?php echo json_encode([
                 'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -86,7 +86,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ elixir('js/front.js') }}"></script>
     <script src="{{ elixir('js/resume.js') }}"></script>
 
     @if ( Config::get('app.debug') )

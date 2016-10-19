@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgSemanticModule } from 'ng-semantic';
 
 import { routes } from './app.routing';
 
@@ -21,7 +21,7 @@ import { FileUploadService } from "./services/file-upload/file-upload.service";
         BrowserModule,
         FormsModule,
         HttpModule,
-        NgbModule,
+        NgSemanticModule,
         RouterModule.forRoot(routes)
     ],
     declarations: [
@@ -37,6 +37,7 @@ import { FileUploadService } from "./services/file-upload/file-upload.service";
     ],
     bootstrap:[
         AppComponent
-    ]
+    ],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class AppModule {}

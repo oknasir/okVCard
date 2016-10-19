@@ -8,7 +8,12 @@ window._ = require('lodash');
  */
 
 window.$ = window.jQuery = require('jquery');
+window.Tether = require('tether');
 require('bootstrap');
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+});
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
@@ -26,7 +31,7 @@ require('vue-resource');
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers['X-CSRF-TOKEN'] = Laravel.csrfToken;
+    request.headers['X-CSRF-TOKEN'] = okVCard.csrfToken;
 
     next();
 });

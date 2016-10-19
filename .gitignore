@@ -1,11 +1,11 @@
-/node_modules
-/public/storage
-/public/resume
-/public/build
-/public/css
-/public/js
-/vendor
-/.idea
+/node_modules/
+/public/storage/
+/public/resume/
+/public/build/
+/public/css/
+/public/js/
+/vendor/
+/.idea/
 /Homestead.json
 /Homestead.yaml
 /.env
@@ -16,3 +16,4 @@
 /config/ide-helper.php
 /storage/oauth-private.key
 /storage/oauth-public.key
+/resources/assets/vendor/semantic/dist/
