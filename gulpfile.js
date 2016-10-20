@@ -57,6 +57,9 @@ elixir(function(mix) {
 
     // Semantic LESS
     mix.less('resume.less');
+    mix.sass('colors.scss');
+    mix.styles(['../../../public/css/colors.css', '../../../public/css/resume.css'], 'public/css/resume.css');
+    mix.delete(['public/css/colors.css', 'public/js/semantic.js']);
 
     /**
      * Version all assets

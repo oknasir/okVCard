@@ -1,7 +1,7 @@
 <nav class="ui fixed menu">
 
     <a href="{{ url('/') }}" class="header item">
-        <button class="ui violet button logo">ok</button>
+        <button class="ui blue lighten-4 white-text button logo">ok</button>
         {{ config('app.name', 'Laravel') }}
     </a>
 
