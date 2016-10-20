@@ -421,7 +421,7 @@
 @invertedColoredActiveBackground: @strongTransparentBlack;
 
 /* Fixed */
-@fixedPrecedingGridMargin: 2.75rem;
+@fixedPrecedingGridMargin: 7rem;
 
 /* Floated */
 @floatedDistance: 0.5rem;

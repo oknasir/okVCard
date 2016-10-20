@@ -1,12 +1,12 @@
 import { Routes } from '@angular/router';
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
-import { FirstComponent } from "./components/first/first.component";
+import { HomeComponent } from "./components/home.component";
 import { SecondComponent } from "./components/second/second.component";
 
 export const routes: Routes = [
     {
         path: '',
-        component: FirstComponent
+        component: HomeComponent
     },
     {
         path: 'edit',

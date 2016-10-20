@@ -1,14 +1,14 @@
 import {Component, Inject, ElementRef} from '@angular/core';
 import { Router } from '@angular/router';
-import { FileUploadService } from '../../services/file-upload/file-upload.service';
+import { FileUploadService } from '../services/file-upload/file-upload.service';
 
 declare var jQuery: any;
 
 @Component({
-    'selector': 'state-template',
-    'template': require('./first.template.html')
+    'selector': 'home',
+    'templateUrl': '/resume/home'
 })
-export class FirstComponent {
+export class HomeComponent {
     /**
      * @type FileUploadService
      */
@@ -94,11 +94,7 @@ export class FirstComponent {
     }
 
     public filesUploadHandler () {
-
         this.filesUpload(0);
     }
 
-    public onNotify(close:boolean):void {
-        console.log('close:',close);
-    }
 }

@@ -15,6 +15,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/resume/{type}', function ($type) {
+    return view('resume.'.$type);
+});
+
 Route::group(['prefix' => '/'], function ($ng) {
     Route::get('/', function () {
         return view('welcome');

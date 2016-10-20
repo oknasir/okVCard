@@ -6,15 +6,15 @@
        Fonts
 --------------------*/
 
-@fontName          : 'Lato';
+@fontName          : 'Raleway';
 @fontSmoothing     : antialiased;
 
-@headerFont        : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
-@pageFont          : @fontName, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+@headerFont        : @fontName, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@pageFont          : @fontName, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 @googleFontName    : @fontName;
 @importGoogleFonts : true;
-@googleFontSizes   : '400,700,400italic,700italic';
+@googleFontSizes   : '200,200i,400,400i,700,700i,900,900i';
 @googleSubset      : 'latin';
 
 @googleProtocol    : 'https://';
@@ -117,7 +117,7 @@
         Page
 --------------------*/
 
-@pageBackground      : #FFFFFF;
+@pageBackground      : #f9f9f9;
 @pageOverflowX       : hidden;
 
 @lineHeight          : 1.4285em;

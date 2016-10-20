@@ -9,7 +9,7 @@ import { routes } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
-import { FirstComponent } from "./components/first/first.component";
+import { HomeComponent } from "./components/home.component";
 import { SecondComponent } from "./components/second/second.component";
 import { ProgressBar } from "./components/ui/progress-bar/progress-bar.component";
 import { TilledIcon } from "./components/ui/tilled-icon/tilled-icon.component";
@@ -27,7 +27,7 @@ import { FileUploadService } from "./services/file-upload/file-upload.service";
     declarations: [
         AppComponent,
         PageNotFoundComponent,
-        FirstComponent,
+        HomeComponent,
         SecondComponent,
         ProgressBar,
         TilledIcon

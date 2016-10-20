@@ -11,7 +11,7 @@
                         class="form-control"
                         (change)="filesSelectionHandler($event)"
                 >
-            <span class="input-group-btn">
+                <span class="input-group-btn">
                 <button
                         type="submit"
                         class="btn btn-default"
@@ -28,11 +28,8 @@
         <h4 *ngIf="files.length">Selected files:</h4>
         <ul class="list-group">
             <li *ngFor="let file of files" class="list-group-item">
-                {{ file.name }}
+                @{{ file.name }}
             </li>
         </ul>
-    </div>
-    <div class="row">
-        <tilled-icon (notify)="onNotify($event)"></tilled-icon>
     </div>
 </div>
