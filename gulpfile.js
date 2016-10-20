@@ -1,6 +1,7 @@
 process.env.DISABLE_NOTIFIER = true;
 
 const elixir = require('laravel-elixir');
+elixir.config.sourcemaps = false;
 
 require('./gulp/elixir-delete');
 require('laravel-elixir-vue');
@@ -40,12 +41,10 @@ elixir(function(mix) {
         , require('./gulp/ngconfig.js')
     );
 
-    // Semantic JS
-    mix.scriptsIn('resources/assets/vendor/semantic/definitions/', 'public/js/semantic.js');
-
     /**
-     * Angular scripts bundling and copying
+     * Angular scripts and SemanticJS bundling and copying
      */
+    mix.scriptsIn('resources/assets/vendor/semantic/definitions/', 'public/js/semantic.js');
     mix.scripts([
         '../vendor/ease.min.js',
         '../../../node_modules/segment-js/dist/segment.js',
@@ -55,7 +54,9 @@ elixir(function(mix) {
         '../../../public/resume/resume.js'
     ], 'public/js/resume.js');
 
-    // Semantic LESS
+    /**
+     * Semantic LESS and Colors
+     */
     mix.less('resume.less');
     mix.sass('colors.scss');
     mix.styles(['../../../public/css/colors.css', '../../../public/css/resume.css'], 'public/css/resume.css');

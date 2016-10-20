@@ -27,4 +27,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the providers of the user.
+     */
+    public function providers()
+    {
+        return $this->hasMany('App\Provider');
+    }
 }

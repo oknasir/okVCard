@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Resume with CMS by oknasir',
+    'name' => 'Nasir Mehmood',
 
     /*
     |--------------------------------------------------------------------------
@@ -169,6 +169,7 @@ return [
         Barryvdh\Debugbar\ServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Laravel\Passport\PassportServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -230,7 +231,8 @@ return [
         /*
          * Package Service Providers...
          */
-        'Debugbar' => Barryvdh\Debugbar\Facade::class
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 
