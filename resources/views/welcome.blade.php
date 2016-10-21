@@ -26,6 +26,10 @@
 </head>
 <body>
 
+    @if(session()->has('info'))
+        <div class="ui ignored info message">{{ session('info') }}</div>
+    @endif
+
     <ok-resume>Loading...</ok-resume>
 
     <!-- Scripts -->
