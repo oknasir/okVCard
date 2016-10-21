@@ -1,6 +1,4 @@
-<?php
-
-use Illuminate\Foundation\Inspiring;
+<?php use Illuminate\Foundation\Inspiring;
 
 /*
 |--------------------------------------------------------------------------

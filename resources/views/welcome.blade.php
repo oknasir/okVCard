@@ -15,6 +15,7 @@
 
     <!-- Styles -->
     <link rel="icon" type="image/png" href="/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:200,200i,400,400i,700,700i,900,900i&amp;subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="{{ elixir('css/resume.css') }}">
 
     <!-- Scripts -->
@@ -25,6 +26,10 @@
     </script>
 </head>
 <body>
+
+    @if(session()->has('info'))
+        <div class="ui ignored info message">{{ session('info') }}</div>
+    @endif
 
     <ok-resume>Loading...</ok-resume>
 

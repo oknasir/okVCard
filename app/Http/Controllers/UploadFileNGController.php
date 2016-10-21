@@ -8,7 +8,7 @@
 
 use Illuminate\Http\Request;
 
-class UploadFileNG extends Controller
+class UploadFileNGController extends Controller
 {
     /**
      * UploadFileNG constructor.
@@ -25,8 +25,12 @@ class UploadFileNG extends Controller
      */
     public function __invoke(Request $request)
     {
+        $this->validate($request, [
+            'ng-upload' => 'required|mimetypes:text/plain|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         if ($request->file('ng-upload')->isValid()) {
-            $request->file('ng-upload')->storeAs('upload/ng', $request->file('ng-upload')->getClientOriginalName());
+//            $request->file('ng-upload')->storeAs('upload/ng', $request->file('ng-upload')->getClientOriginalName());
             return [
                 'success' => true,
                 'message' => 'File is saved.'

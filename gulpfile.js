@@ -60,6 +60,7 @@ elixir(function(mix) {
     mix.less('resume.less');
     mix.sass('colors.scss');
     mix.styles(['../../../public/css/colors.css', '../../../public/css/resume.css'], 'public/css/resume.css');
+    mix.styles(['../../../public/css/colors.css', '../../../public/css/front.css'], 'public/css/front.css');
     mix.delete(['public/css/colors.css', 'public/js/semantic.js']);
 
     /**
@@ -75,8 +76,11 @@ elixir(function(mix) {
      */
     mix.delete(['public/resume', 'public/css', 'public/js']);
 
-    // Semantic Themes
+    // Semantic Themes assets
     mix.copy('resources/assets/vendor/semantic/themes/**/assets/**/*.*', 'public/build/fonts/semantic');
+
+    // Font Awesome assets
+    mix.copy('node_modules/font-awesome/fonts/**/*.*', 'public/build/fonts/font-awesome');
 
     /**
      * Live Reload

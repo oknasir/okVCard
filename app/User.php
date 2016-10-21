@@ -35,4 +35,12 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Provider');
     }
+
+    /**
+     * Get the providers of the user.
+     */
+    public function loginTokens()
+    {
+        return $this->hasMany('App\LoginToken');
+    }
 }

@@ -8,6 +8,10 @@
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
 
+// Font Awesome
+$fa-font-path: "../fonts/font-awesome" !default;
+@import "node_modules/font-awesome/scss/font-awesome";
+
 .custom-control-indicator {
     margin-top: 3px;
 }

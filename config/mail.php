@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => 'hello@example.com',
-        'name' => 'Example',
+        'address' => 'info@oknasir.com',
+        'name' => 'okVCard Resume with CMS',
     ],
 
     /*
@@ -110,6 +110,6 @@ return [
     |
     */
 
-    'sendmail' => '/usr/sbin/sendmail -bs',
+    'sendmail' => 'D:\wamp64\sendmail\sendmail.exe -bs',
 
 ];

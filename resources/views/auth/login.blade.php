@@ -60,6 +60,15 @@
                             </a>
                         </div>
                     </div>
+
+                    <div class="btn-group">
+                        <a class="btn btn-sm btn-outline-success" data-toggle="tooltip" data-placement="left" title="Login or Register using GitHub" href="{{ url('/login/github') }}"><i class="fa fa-github fa-fw"></i> github</a>
+                        <a class="btn btn-sm btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Login or Register using Facebook" href="{{ url('/login/facebook') }}"><i class="fa fa-facebook fa-fw"></i> facebook</a>
+                        <a class="btn btn-sm btn-outline-info" data-toggle="tooltip" data-placement="top" title="Login or Register using Twitter" href="{{ url('/login/twitter') }}"><i class="fa fa-twitter fa-fw"></i> twitter</a>
+                        <a class="btn btn-sm btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Login or Register using Google" href="{{ url('/login/google') }}"><i class="fa fa-google fa-fw"></i> google</a>
+                        <a class="btn btn-sm btn-outline-primary" data-toggle="tooltip" data-placement="top" title="Login or Register using LinkedIn" href="{{ url('/login/linkedin') }}"><i class="fa fa-linkedin fa-fw"></i> linkedin</a>
+                        <a class="btn btn-sm btn-outline-warning" data-toggle="tooltip" data-placement="right" title="Login without password using email" href="{{ url('/login/email') }}"><i class="fa fa-envelope fa-fw"></i> email</a>
+                    </div>
                 </form>
             </div>
         </div>

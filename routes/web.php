@@ -13,6 +13,9 @@
 
 Auth::routes();
 
+Route::get('login/email', 'Auth\EmailController@login');
+Route::post('login/email', 'Auth\EmailController@postLogin');
+Route::get('login/email/{token}', 'Auth\EmailController@confirmLogin');
 Route::get('login/{social}', 'Auth\SocialController@redirectToProvider');
 Route::get('login/{social}/callback', 'Auth\SocialController@handleProviderCallback');
 
