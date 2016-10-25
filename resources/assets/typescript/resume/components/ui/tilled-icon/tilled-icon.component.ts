@@ -141,27 +141,49 @@ export class TilledIcon {
     /**
      * @type {number}
      */
-    private toCloseIcon: boolean = true;
+    public toCloseIcon: boolean = true;
 
     /**
      * Click function for toggle icon
      */
     public triggerTilled () {
 
-        if (this.toCloseIcon) {
+        if (this.toCloseIcon) this.openMenu();
+        else this.closeMenu();
 
-            this.inAC(this.segmentA);
-            this.inB(this.segmentB);
-            this.inAC(this.segmentC);
-
-        } else {
-
-            this.outAC(this.segmentA);
-            this.outB(this.segmentB);
-            this.outAC(this.segmentC);
-
-        }
         this.toCloseIcon = !this.toCloseIcon;
+    }
+
+    /**
+     * open menu
+     */
+    public openMenu(trigger: boolean = false) {
+
+        this.inAC(this.segmentA);
+        this.inB(this.segmentB);
+        this.inAC(this.segmentC);
+
+        if (trigger) {
+            this.toCloseIcon = false;
+            console.log('openMenu called');
+        }
+
+    }
+
+    /**
+     * close menu
+     */
+    public closeMenu(trigger: boolean = false) {
+
+        this.outAC(this.segmentA);
+        this.outB(this.segmentB);
+        this.outAC(this.segmentC);
+
+        if (trigger) {
+            this.toCloseIcon = true;
+            console.log('closeMenu called');
+        }
+
     }
 
 }

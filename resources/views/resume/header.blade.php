@@ -5,7 +5,7 @@
         {{ config('app.name', 'Laravel') }}
     </a>
 
-    <tilled-icon class="item" (notify)="onNotify($event)"></tilled-icon>
+    <tilled-icon class="item" (notify)="onNotify($event)" #menu></tilled-icon>
     <a [routerLink]="['/']" class="item">Go to first component</a>
     <a [routerLink]="['/edit']" class="item">Go to 2nd component</a>
 
