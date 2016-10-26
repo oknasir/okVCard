@@ -1,12 +1,12 @@
-// Semantic UI
-@import "../vendor/semantic/semantic";
+
+// Color variations from google
+@import "colors";
 
 .ui.menu:not(.vertical) .item > .ui.button.logo {
     font-size: 3rem;
     font-weight: 200;
-    line-height: 1rem;
     margin-right: 0.5rem;
-    padding: 0 2px 5px 1px;
+    padding: 2px 6px;
 }
 
 // Tilled Icon

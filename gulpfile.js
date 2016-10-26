@@ -8,6 +8,10 @@ require('laravel-elixir-vue');
 require('laravel-elixir-livereload');
 require('laravel-elixir-webpack-official');
 
+var production = process.argv.filter(function (arg) {
+    return arg.indexOf('production') !== -1;
+});
+
 /*
  |--------------------------------------------------------------------------
  | Elixir Asset Management
@@ -35,8 +39,9 @@ elixir(function(mix) {
     /**
      * Angular scripts webpack
      */
+    if (production.length === 0)
     mix.webpack([]
-        , 'public/resume'
+        , 'public/storage/resume'
         , 'resources/assets/typescript'
         , require('./gulp/ngconfig.js')
     );
@@ -44,24 +49,23 @@ elixir(function(mix) {
     /**
      * Angular scripts and SemanticJS bundling and copying
      */
-    mix.scriptsIn('resources/assets/vendor/semantic/definitions/', 'public/js/semantic.js');
     mix.scripts([
         '../vendor/ease.min.js',
         '../../../node_modules/segment-js/dist/segment.js',
         '../../../node_modules/jquery/dist/jquery.js',
-        '../../../public/js/semantic.js',
-        '../../../public/resume/vendor.js',
-        '../../../public/resume/resume.js'
+        '../../../public/storage/semantic-ui/semantic.min.js',
+        '../../../public/storage/resume/vendor.js',
+        '../../../public/storage/resume/resume.js'
     ], 'public/js/resume.js');
 
     /**
-     * Semantic LESS and Colors
+     * Semantic and Resume SASS
      */
-    mix.less('resume.less');
-    mix.sass('colors.scss');
-    mix.styles(['../../../public/css/colors.css', '../../../public/css/resume.css'], 'public/css/resume.css');
-    mix.styles(['../../../public/css/colors.css', '../../../public/css/front.css'], 'public/css/front.css');
-    mix.delete(['public/css/colors.css', 'public/js/semantic.js']);
+    mix.sass('resume.scss');
+    mix.styles([
+        '../../../public/storage/semantic-ui/semantic.min.css',
+        '../../../public/css/resume.css'
+    ], 'public/css/resume.css');
 
     /**
      * Version all assets
@@ -74,13 +78,11 @@ elixir(function(mix) {
     /**
      * Remove distributed pack files
      */
-    mix.delete(['public/resume', 'public/css', 'public/js']);
-
-    // Semantic Themes assets
-    mix.copy('resources/assets/vendor/semantic/themes/**/assets/**/*.*', 'public/build/fonts/semantic');
+    mix.delete(['public/css', 'public/js']);
+    if (production.length) mix.delete('public/storage/resume');
 
     // Font Awesome assets
-    mix.copy('node_modules/font-awesome/fonts/**/*.*', 'public/build/fonts/font-awesome');
+    mix.copy('node_modules/font-awesome/fonts/**/*.*', 'public/storage/font-awesome');
 
     /**
      * Live Reload
