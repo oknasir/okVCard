@@ -13,7 +13,7 @@ Elixir.extend('delete', function (path) {
 
     new Task('delete', function () {
         this.recordStep('Deleting files');
-        return remove(path);
+        return remove(path, {force:true});
     }, {
         src: {
             path: path

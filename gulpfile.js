@@ -2,6 +2,9 @@ process.env.DISABLE_NOTIFIER = true;
 
 const elixir = require('laravel-elixir');
 elixir.config.sourcemaps = false;
+elixir.config.css.minifier.pluginOptions = {
+    keepSpecialComments: 0
+};
 
 require('./gulp/elixir-delete');
 require('laravel-elixir-vue');
