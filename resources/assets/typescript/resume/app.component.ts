@@ -16,6 +16,8 @@ export class AppComponent {
 
             this.keyBuffer[e.which] = true;
 
+            console.log(e.which);
+
             if (this.timeoutId)
                 window.clearTimeout(this.timeoutId);
 
