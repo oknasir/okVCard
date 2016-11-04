@@ -1,13 +1,15 @@
 <nav class="ui fixed menu">
 
-    <a href="{{ url('/') }}" class="header item">
-        <button class="ui blue lighten-4 white-text button logo">ok</button>
+    <a {!! isset($web) && $web == true ? 'href="/"' : '[routerLink]="[\'/\']"' !!} class="header item">
+        <button class="ui blue lighten-4 white-text button logo">ok</button><span style="width:4px;height:34px"></span>
         {{ config('app.name', 'Laravel') }}
     </a>
 
-    <tilled-icon class="item" (notify)="onNotify($event)" #menu></tilled-icon>
-    <a [routerLink]="['/']" class="item">Go to first component</a>
-    <a [routerLink]="['/edit']" class="item">Go to 2nd component</a>
+    @if(!isset($web) || $web != true)
+        <tilled-icon class="item" (notify)="onNotify($event)" #menu></tilled-icon>
+        <a [routerLink]="['/']" class="item">Go to first component</a>
+        <a [routerLink]="['/edit']" class="item">Go to 2nd component</a>
+    @endif
 
     <div class="right menu">
 
@@ -46,12 +48,14 @@
 
 </nav>
 
-<section class="ui centered grid">
+@if(!isset($web) || $web != true)
+    <section class="ui centered grid">
 
-    <div class="ten wide column">
+        <div class="ten wide column">
 
-        <router-outlet></router-outlet>
+            <router-outlet></router-outlet>
 
-    </div>
+        </div>
 
-</section>
+    </section>
+@endif

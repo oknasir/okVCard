@@ -1,0 +1,10 @@
+
+// Color variations from google
+@import "colors";
+
+.ui.menu:not(.vertical) .item > .ui.button.logo {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-right: 0.5rem;
+  padding: 2px 6px;
+}

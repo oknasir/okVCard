@@ -33,6 +33,8 @@ elixir(function(mix) {
      * sass
      */
     mix.sass('front.scss');
+    mix.sass('admin.scss');
+    mix.sass('resume.scss');
 
     /**
      * Vue, JQuery and Bootstrap scripts webpack bundling and copying
@@ -43,14 +45,14 @@ elixir(function(mix) {
      * Angular scripts webpack
      */
     if (production.length === 0)
-    mix.webpack([]
-        , 'public/storage/resume'
-        , 'resources/assets/typescript'
-        , require('./gulp/ngconfig.js')
-    );
+        mix.webpack([]
+            , 'public/storage/resume'
+            , 'resources/assets/typescript'
+            , require('./gulp/ngconfig.js')
+        );
 
     /**
-     * Angular scripts and SemanticJS bundling and copying
+     * scripts
      */
     mix.scripts([
         '../vendor/ease.min.js',
@@ -60,11 +62,18 @@ elixir(function(mix) {
         '../../../public/storage/resume/vendor.js',
         '../../../public/storage/resume/resume.js'
     ], 'public/js/resume.js');
+    mix.scripts([
+        '../../../node_modules/jquery/dist/jquery.js',
+        '../../../public/storage/semantic-ui/semantic.min.js',
+    ], 'public/js/admin.js');
 
     /**
-     * Semantic and Resume SASS
+     * styles
      */
-    mix.sass('resume.scss');
+    mix.styles([
+        '../../../public/storage/semantic-ui/semantic.min.css',
+        '../../../public/css/admin.css'
+    ], 'public/css/admin.css');
     mix.styles([
         '../../../public/storage/semantic-ui/semantic.min.css',
         '../../../public/css/resume.css'
