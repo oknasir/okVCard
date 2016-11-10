@@ -26,7 +26,7 @@
                     <div class="field">
                         <div class="ui left icon input">
                             <i class="at icon"></i>
-                            <input type="text" name="username" placeholder="E-mail address" value="{{ old('email') }}">
+                            <input type="email" name="email" placeholder="E-mail address" value="{{ old('email') }}">
                         </div>
                     </div>
                     <div class="field">
@@ -56,7 +56,6 @@
 
             </form>
 
-
             <div class="ui message">
                 Already has an account? <a href="{{ route('login') }}">Login</a>
             </div>
@@ -64,4 +63,59 @@
         </div>
     </div>
 
+@endsection
+
+@section('scripts')
+    <script>
+        jQuery(document).ready(function($) {
+            $('.ui.form').form({
+                fields: {
+                    name: {
+                        identifier  : 'name',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your full name'
+                        }]
+                    },
+                    username: {
+                        identifier  : 'username',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your username'
+                        }]
+                    },
+                    email: {
+                        identifier  : 'email',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your e-mail'
+                        }, {
+                            type   : 'email',
+                            prompt : 'Please enter a valid e-mail'
+                        }]
+                    },
+                    password: {
+                        identifier  : 'password',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your password'
+                        }, {
+                            type   : 'length[5]',
+                            prompt : 'Your password must be at least 5 characters'
+                        }]
+                    },
+                    password_confirmation: {
+                        identifier  : 'password_confirmation',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter confirmation password'
+                        }, {
+                            type   : 'length[5]',
+                            prompt : 'Your password must be at least 5 characters'
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
 @endsection

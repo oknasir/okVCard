@@ -15,7 +15,7 @@
             <div class="field">
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="email" placeholder="E-mail address or Username" value="{{ old('email') }}" autofocus>
+                    <input type="email" name="email" placeholder="E-mail address" value="{{ old('email') }}" autofocus>
                 </div>
             </div>
             <button type="submit" class="ui fluid large submit button blue white-text"><i class="send icon"></i> Send email for Reset Password</button>
@@ -33,4 +33,22 @@
 
     </form>
 
+@endsection
+
+@section('scripts')
+    <script>
+        jQuery(document).ready(function($) {
+            $('.ui.form').form({
+                fields: {
+                    email: {
+                        identifier  : 'email',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your e-mail'
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
 @endsection

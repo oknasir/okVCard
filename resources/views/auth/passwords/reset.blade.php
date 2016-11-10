@@ -11,7 +11,7 @@
             <div class="field">
                 <div class="ui left icon input">
                     <i class="user icon"></i>
-                    <input type="text" name="email" placeholder="E-mail address or Username" value="{{ $email or old('email') }}" autofocus>
+                    <input type="text" name="email" placeholder="E-mail address" value="{{ $email or old('email') }}" autofocus>
                 </div>
             </div>
             <div class="field">
@@ -41,4 +41,45 @@
 
     </form>
 
+@endsection
+
+@section('scripts')
+    <script>
+        jQuery(document).ready(function($) {
+            $('.ui.form').form({
+                fields: {
+                    email: {
+                        identifier  : 'email',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your e-mail'
+                        }, {
+                            type   : 'email',
+                            prompt : 'Please enter a valid e-mail'
+                        }]
+                    },
+                    password: {
+                        identifier  : 'password',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter your password'
+                        }, {
+                            type   : 'length[5]',
+                            prompt : 'Your password must be at least 5 characters'
+                        }]
+                    },
+                    password_confirmation: {
+                        identifier  : 'password_confirmation',
+                        rules: [{
+                            type   : 'empty',
+                            prompt : 'Please enter confirmation password'
+                        }, {
+                            type   : 'length[5]',
+                            prompt : 'Your password must be at least 5 characters'
+                        }]
+                    }
+                }
+            });
+        });
+    </script>
 @endsection
