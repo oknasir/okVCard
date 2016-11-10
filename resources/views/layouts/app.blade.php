@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }}'s resume with Content Management</title>
+    <meta name="keywords" content="oknasir, Nasir, Mehmood, Nasir Mehmood, Resume, CV, Curriculum Vitae, nasir, mehmood, nasir mehmood, nasir mehmood resume, nasir mehmood curriculum vitae with cms, nasir mehmood resume with cms, nasir mehmood cv, nasir mehmood cv with cms, resume, oknasir resume, cv, oknasir cv, curriculum vitae, oknasir curriculum vitae, visiting card of nasir, oknasir resume, Content Management, CMS, content management, cms">
+    <meta name="description" content="I have experience to develop websites and rest api from scratch. I also have much experience in facebook API, Amazon API, google analytical API, Paypal API, 2Checkout. I also like to play new techniques of designing webpage and backend. Every day I learn a new technique in web development and I am learning it from last 5 years.">
 
     <!-- Styles -->
+    <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" href="{{ elixir('css/admin.css') }}">
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.okVCard = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -27,7 +27,11 @@
     @yield('content')
 
     <!-- Scripts -->
-    <script src="{{ elixir('js/admin.js') }}"></script>
+    @if (Auth::guest())
+        <script src="{{ elixir('js/admin.js') }}"></script>
+    @else
+        <script src="{{ elixir('js/front.js') }}"></script>
+    @endif
 
     @if (Config::get('app.debug'))
         <script type="text/javascript">

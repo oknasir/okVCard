@@ -9,16 +9,20 @@
   padding: 2px 6px;
 }
 
-.ui.buttons.socials {
-  .ui.button {
-    background: rgba(33, 150, 243, 0.11);
-    &:hover {
-      background: rgba(33, 150, 243, 0.19);
-    }
-    padding-bottom: 0.6rem;
-    .icon {
-      font-size: 1.35rem;
-      margin: 0 !important;
+.ui.grid.center-form {
+  height: 100%;
+  padding: 0 !important;
+  .ui.buttons.socials {
+    .ui.button {
+      background: rgba(33, 150, 243, 0.11);
+      padding-bottom: 0.6rem;
+      &:hover {
+        background: rgba(33, 150, 243, 0.19);
+      }
+      .icon {
+        font-size: 1.35rem;
+        margin: 0;
+      }
     }
   }
 }

@@ -13,10 +13,11 @@
 
 Auth::routes();
 
-Route::get('login/email', 'Auth\EmailController@login');
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('user.reset');
+Route::get('login/email', 'Auth\EmailController@login')->name('login.email');
 Route::post('login/email', 'Auth\EmailController@postLogin');
 Route::get('login/email/{token}', 'Auth\EmailController@confirmLogin');
-Route::get('login/{social}', 'Auth\SocialController@redirectToProvider');
+Route::post('login/{social}', 'Auth\SocialController@redirectToProvider')->name('login.provider');
 Route::get('login/{social}/callback', 'Auth\SocialController@handleProviderCallback');
 
 Route::get('/home', 'HomeController@index');

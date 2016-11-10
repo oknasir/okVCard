@@ -2,18 +2,30 @@
 
 @section('content')
 
-    <section id="startVueApp">
+    <section class="ui centered grid" id="startVueApp">
 
-        <example></example>
+        <div class="ten wide column">
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <passport-clients></passport-clients>
-                    <passport-authorized-clients></passport-authorized-clients>
-                    <passport-personal-access-tokens></passport-personal-access-tokens>
-                </div>
-            </div>
+            <example></example>
+
+        </div>
+
+        <div class="ten wide column">
+
+            <passport-clients></passport-clients>
+
+        </div>
+
+        <div class="ten wide column">
+
+            <passport-authorized-clients></passport-authorized-clients>
+
+        </div>
+
+        <div class="ten wide column">
+
+            <passport-personal-access-tokens></passport-personal-access-tokens>
+
         </div>
 
     </section>
