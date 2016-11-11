@@ -4,27 +4,19 @@
 
     <section class="ui centered grid" id="startVueApp">
 
-        <div class="ten wide column">
+        <div class="twelve wide column">
 
-            <example></example>
+            <div class="ui segments">
 
-        </div>
+                <example></example>
 
-        <div class="ten wide column">
+                <passport-clients></passport-clients>
 
-            <passport-clients></passport-clients>
+                <passport-authorized-clients></passport-authorized-clients>
 
-        </div>
+                <passport-personal-access-tokens></passport-personal-access-tokens>
 
-        <div class="ten wide column">
-
-            <passport-authorized-clients></passport-authorized-clients>
-
-        </div>
-
-        <div class="ten wide column">
-
-            <passport-personal-access-tokens></passport-personal-access-tokens>
+            </div>
 
         </div>
 

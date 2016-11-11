@@ -31,7 +31,7 @@ require('vue-resource');
  */
 
 Vue.http.interceptors.push((request, next) => {
-    request.headers['X-CSRF-TOKEN'] = okVCard.csrfToken;
+    request.headers.set('X-CSRF-TOKEN', okVCard.csrfToken);
 
     next();
 });

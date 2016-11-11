@@ -7,7 +7,7 @@ elixir.config.css.minifier.pluginOptions = {
 };
 
 require('./gulp/elixir-delete');
-require('laravel-elixir-vue');
+require('laravel-elixir-vue-2');
 require('laravel-elixir-livereload');
 require('laravel-elixir-webpack-official');
 

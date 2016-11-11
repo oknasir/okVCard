@@ -9,7 +9,7 @@
 </style>
 
 <template>
-    <div>
+    <div class="ui red segment">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -238,21 +238,35 @@
         },
 
         /**
-         * Prepare the component.
+         * Prepare the component (Vue 1.x).
          */
         ready() {
-            this.getClients();
+            this.prepareComponent();
+        },
 
-            $('#modal-create-client').on('shown.bs.modal', () => {
-                $('#create-client-name').focus();
-            });
-
-            $('#modal-edit-client').on('shown.bs.modal', () => {
-                $('#edit-client-name').focus();
-            });
+        /**
+         * Prepare the component (Vue 2.x).
+         */
+        mounted() {
+            this.prepareComponent();
         },
 
         methods: {
+            /**
+             * Prepare the component.
+             */
+            prepareComponent() {
+                this.getClients();
+
+                $('#modal-create-client').on('shown.bs.modal', () => {
+                    $('#create-client-name').focus();
+                });
+
+                $('#modal-edit-client').on('shown.bs.modal', () => {
+                    $('#edit-client-name').focus();
+                });
+            },
+
             /**
              * Get all of the OAuth clients for the user.
              */

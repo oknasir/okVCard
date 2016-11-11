@@ -9,7 +9,7 @@
 </style>
 
 <template>
-    <div>
+    <div class="ui red segment">
         <div v-if="tokens.length > 0">
             <div class="panel panel-default">
                 <div class="panel-heading">Authorized Applications</div>
@@ -66,13 +66,27 @@
         },
 
         /**
-         * Prepare the component.
+         * Prepare the component (Vue 1.x).
          */
         ready() {
-            this.getTokens();
+            this.prepareComponent();
+        },
+
+        /**
+         * Prepare the component (Vue 2.x).
+         */
+        mounted() {
+            this.prepareComponent();
         },
 
         methods: {
+            /**
+             * Prepare the component (Vue 2.x).
+             */
+            prepareComponent() {
+                this.getTokens();
+            },
+
             /**
              * Get all of the authorized tokens for the user.
              */
